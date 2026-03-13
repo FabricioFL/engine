@@ -9,6 +9,40 @@
     <RootNamespace>Engine</RootNamespace>
   </PropertyGroup>
 
+  <!-- Debug (default) -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputType>Exe</OutputType>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DefineConstants>$(DefineConstants);DEBUG;ENABLE_LOGS</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Preview -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Preview'">
+    <OutputType>WinExe</OutputType>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DefineConstants>$(DefineConstants);PREVIEW;ENABLE_LOGS</DefineConstants>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <!-- Production -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Production'">
+    <OutputType>WinExe</OutputType>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DefineConstants>$(DefineConstants);PRODUCTION</DefineConstants>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Silk.NET.Input" Version="2.22.0" />
     <PackageReference Include="Silk.NET.OpenGL" Version="2.22.0" />

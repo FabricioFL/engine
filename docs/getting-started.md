@@ -136,3 +136,102 @@ dotnet run
 ```
 
 The window opens, and your game loop starts. The engine handles the update/render cycle automatically. Your `Update` method is called each frame between physics stepping and UI updates.
+
+## Build Profiles
+
+The engine supports three build profiles: **Debug**, **Preview**, and **Production**. Each profile controls optimization, logging, terminal visibility, and packaging.
+
+| | Debug | Preview | Production |
+|---|---|---|---|
+| Standalone executable | No | Yes | Yes |
+| Self-contained (.NET bundled) | No | Yes | Yes |
+| Optimized | No | Yes | Yes (+ trimmed) |
+| Terminal window | Visible | Hidden | Hidden |
+| Log output (file sink) | All levels | All levels | Disabled |
+| Console log sink | Active | Disabled | Disabled |
+
+### Debug
+
+Default profile for development. Runs from source with full logging to both console and file. The terminal window stays open so you can see log output in real time.
+
+```bash
+# Run directly (default configuration)
+dotnet run
+
+# Or explicitly
+dotnet run -c Debug
+```
+
+No standalone binary is produced — the game runs through the .NET SDK.
+
+### Preview
+
+Standalone build with logging enabled (file sink only). The terminal window is hidden. Use this to test what the final game will look and feel like while still capturing logs for diagnostics.
+
+```bash
+# Build
+dotnet publish -c Preview -r <RID> -o build/preview
+
+# Examples per platform
+dotnet publish -c Preview -r win-x64 -o build/preview
+dotnet publish -c Preview -r linux-x64 -o build/preview
+dotnet publish -c Preview -r osx-x64 -o build/preview
+```
+
+Output is a single self-contained executable in `build/preview/`. Logs are written to `logs/` next to the executable at runtime. No terminal window is shown.
+
+### Production
+
+Final standalone build for distribution. All logging is disabled, the terminal is hidden, and the binary is trimmed to reduce file size.
+
+```bash
+# Build
+dotnet publish -c Production -r <RID> -o build/production
+
+# Examples per platform
+dotnet publish -c Production -r win-x64 -o build/production
+dotnet publish -c Production -r linux-x64 -o build/production
+dotnet publish -c Production -r osx-x64 -o build/production
+```
+
+Output is a single self-contained executable in `build/production/`. No logs are written and no terminal window is shown.
+
+### Runtime Identifiers (RID)
+
+The `-r` flag specifies the target platform. Common values:
+
+| RID | Platform |
+|---|---|
+| `win-x64` | Windows 64-bit |
+| `linux-x64` | Linux 64-bit |
+| `osx-x64` | macOS Intel |
+| `osx-arm64` | macOS Apple Silicon |
+
+### Assets
+
+Published builds automatically include `assets/`, `config/`, and `ui/gui/` alongside the executable. These folders must stay next to the binary at runtime.
+
+### Preprocessor Constants
+
+Each profile defines constants you can use in game code with `#if` directives:
+
+```csharp
+#if DEBUG
+    logger.Info("Game", "Debug mode active");
+#endif
+
+#if ENABLE_LOGS
+    logger.Info("Game", $"Player health: {health}");
+#endif
+
+#if PRODUCTION
+    // Production-only code path
+#endif
+```
+
+| Constant | Debug | Preview | Production |
+|---|---|---|---|
+| `DEBUG` | Yes | — | — |
+| `ENABLE_LOGS` | Yes | Yes | — |
+| `PREVIEW` | — | Yes | — |
+| `PRODUCTION` | — | — | Yes |
