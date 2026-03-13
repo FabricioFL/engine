@@ -1,0 +1,35 @@
+#pause-bg {
+    background-color: #00000099;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pause-container {
+    width: 280;
+    height: 320;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14;
+}
+
+#pause-title {
+    width: 280;
+    height: 44;
+    font-size: 28;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16;
+}
+
+.pause-btn {
+    width: 200;
+    height: 40;
+    background-color: #334466cc;
+    color: #ddeeff;
+    font-size: 18;
+    justify-content: center;
+    align-items: center;
+}

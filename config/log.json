@@ -1,0 +1,9 @@
+{
+  "InfoEnabled": true,
+  "WarningEnabled": true,
+  "ErrorEnabled": true,
+  "BuildEnabled": true,
+  "ExposeLogsInBuild": false,
+  "MaxFileSizeBytes": 10485760,
+  "MaxRotatedFiles": 3
+}

@@ -1,0 +1,86 @@
+#options-bg {
+    background-color: #0a0a1aee;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#options-container {
+    width: 400;
+    height: 430;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12;
+}
+
+#options-title {
+    width: 400;
+    height: 44;
+    font-size: 28;
+    color: #ccddff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16;
+}
+
+.opt-row {
+    width: 380;
+    height: 36;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10;
+}
+
+.opt-label {
+    width: 140;
+    height: 36;
+    color: #aabbcc;
+    font-size: 16;
+    justify-content: center;
+    align-items: center;
+}
+
+.opt-value {
+    width: 180;
+    height: 36;
+    background-color: #223355cc;
+    color: #ddeeff;
+    font-size: 16;
+    justify-content: center;
+    align-items: center;
+}
+
+.opt-bar-bg {
+    width: 180;
+    height: 20;
+    background-color: #333333cc;
+}
+
+.opt-bar-fill {
+    width: 126;
+    height: 20;
+    background-color: #44aa66cc;
+}
+
+.opt-small-btn {
+    width: 50;
+    height: 36;
+    background-color: #334466cc;
+    color: #ddeeff;
+    font-size: 20;
+    justify-content: center;
+    align-items: center;
+}
+
+.opt-btn {
+    width: 160;
+    height: 40;
+    background-color: #2244aacc;
+    color: #ddeeff;
+    font-size: 18;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12;
+}

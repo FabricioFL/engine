@@ -1,0 +1,35 @@
+#menu-bg {
+    background-color: #0a0a1aee;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-container {
+    width: 300;
+    height: 320;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16;
+}
+
+#title {
+    width: 300;
+    height: 50;
+    font-size: 32;
+    color: #ccddff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20;
+}
+
+.menu-btn {
+    width: 220;
+    height: 44;
+    background-color: #2244aacc;
+    color: #ddeeff;
+    font-size: 20;
+    justify-content: center;
+    align-items: center;
+}

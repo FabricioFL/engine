@@ -1,0 +1,35 @@
+#death-bg {
+    background-color: #1a0000bb;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#death-container {
+    width: 300;
+    height: 240;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16;
+}
+
+#death-title {
+    width: 300;
+    height: 50;
+    font-size: 32;
+    color: #ff3333;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20;
+}
+
+.death-btn {
+    width: 200;
+    height: 44;
+    background-color: #662222cc;
+    color: #ffcccc;
+    font-size: 20;
+    justify-content: center;
+    align-items: center;
+}

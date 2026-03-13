@@ -1,0 +1,27 @@
+#hud-container {
+    position: absolute;
+    top: 20;
+    left: 20;
+    width: 200;
+    height: 30;
+}
+
+#health-bar-bg {
+    width: 200;
+    height: 24;
+    background-color: #333333cc;
+}
+
+#health-bar-fill {
+    width: 200;
+    height: 24;
+    background-color: #22cc44ee;
+}
+
+#damage-flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000000;
+    display: none;
+}

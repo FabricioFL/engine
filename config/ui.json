@@ -1,0 +1,29 @@
+{
+  "Views": [
+    {
+      "Template": "hud.html",
+      "Controller": "HudController",
+      "Mountable": true
+    },
+    {
+      "Template": "main-menu.html",
+      "Controller": "MainMenuController",
+      "Mountable": true
+    },
+    {
+      "Template": "pause-menu.html",
+      "Controller": "PauseMenuController",
+      "Mountable": true
+    },
+    {
+      "Template": "options.html",
+      "Controller": "OptionsController",
+      "Mountable": true
+    },
+    {
+      "Template": "death.html",
+      "Controller": "DeathController",
+      "Mountable": true
+    }
+  ]
+}
